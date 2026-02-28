@@ -649,7 +649,7 @@ nav {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 2%;
   padding: 32px;
   display: grid;
@@ -1279,7 +1279,7 @@ header {
 /* DESKTOP (1025px+) - NO CHANGES */
 @media (min-width: 1025px) {
   .container {
-    max-width: 1000px;
+    max-width: 100%;
     margin: 2%;
     padding: 32px;
     grid-template-columns: 2.2fr 1fr;
@@ -2159,7 +2159,115 @@ img {
 .slide-up {
   animation: slideUp 0.3s ease-out;
 }
+/*urban contact page */
+.hero{
+  text-align:center;
+  padding:131px;
+  display: flex;
+  flex-direction: column;
+}
 
+.hero h1{
+  font-size:56px;
+  margin-bottom:0px;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:60%;
+  margin:auto;
+}
+
+/* ================= GRID SECTION ================= */
+
+.section{
+  padding:70px 8%;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:10px 10px 20px var(--shadow-light),
+             -10px -10px 20px var(--shadow-dark);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.icon{
+  width:28px;
+  margin-bottom:15px;
+  stroke:var(--text);
+}
+
+/* ================= FORM ================= */
+
+form input, form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border:none;
+  border-radius:15px;
+  background:var(--card);
+  box-shadow:inset 5px 5px 10px var(--shadow-light),
+             inset -5px -5px 10px var(--shadow-dark);
+  color:var(--text);
+}
+
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  background:var(--card);
+  box-shadow:6px 6px 12px var(--shadow-light),
+             -6px -6px 12px var(--shadow-dark);
+  font-weight:bold;
+  color:var(--text);
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+/* ================= FAQ ================= */
+
+.faq-item{
+  margin-bottom:20px;
+}
+
+.faq-item h4{
+  margin-bottom:8px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:var(--muted);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+  }
+  .hero h1{
+    font-size:30px;
+  }
+}
 /* URBANDIARY PAGE STYLES*/
 .ud-page {
   background: var(--bg);
