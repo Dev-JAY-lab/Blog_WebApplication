@@ -1,9 +1,3 @@
-/* ============================================
-   URBAN DIARY - COMBINED STYLES
-   All CSS consolidated into one file
-   ============================================ */
-
-/* ================= COLOR VARIABLES ================= */
 :root {
   --bg: #f0f2f5;
   --text: #2d3436;
@@ -243,7 +237,6 @@ body {
   }
 }
 
-/* ================= NAVBAR ================= */
 nav {
   width: 100%;
   min-height: 70px;
@@ -438,11 +431,9 @@ nav {
 
 .btn-logout:active {
   transform: translateY(0);
-}
+
   filter: brightness(0.8);
 }
-
-/* ================= MOBILE & TABLET RESPONSIVE ================= */
 
 /* TABLET + BELOW (1024px) */
 @media (max-width: 1024px) {
@@ -657,7 +648,6 @@ nav {
   }
 }
 
-/* ================= HOME PAGE - FEED ================= */
 .container {
   max-width: 1200px;
   margin: 2%;
@@ -1038,7 +1028,6 @@ nav {
   opacity: 0.7;
 }
 
-/* ================= URBANDIARY HERO PAGE ================= */
 header {
   height: 10vh;
   width: 100vw;
@@ -1286,8 +1275,6 @@ header {
 .tab-content.active {
   display: block;
 }
-
-/* ================= RESPONSIVE LAYOUT ================= */
 
 /* DESKTOP (1025px+) - NO CHANGES */
 @media (min-width: 1025px) {
@@ -2128,7 +2115,6 @@ header {
   }
 }
 
-/* ================= UTILITY CLASSES ================= */
 button img {
   width: 20px;
   height: 20px;
@@ -2145,7 +2131,7 @@ img {
   height: auto;
 }
 
-/* ================= ANIMATIONS ================= */
+/*ANIMATIONS  */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -2174,7 +2160,7 @@ img {
   animation: slideUp 0.3s ease-out;
 }
 
-/* ================= URBANDIARY PAGE STYLES ================= */
+/* URBANDIARY PAGE STYLES*/
 .ud-page {
   background: var(--bg);
 }
