@@ -6,7 +6,41 @@ let firebaseUser = null;
 
 onAuthStateChanged(auth, (user) => {
   firebaseUser = user;
+  // also make available globally so other scripts (home.js) can peek
+  window.firebaseUser = user;
+  // update navbar user display when auth state changes
+  try {
+    updateNavUser(user);
+  } catch (e) {}
 });
+
+// Update nav bar user text and logout visibility
+function updateNavUser(user) {
+  const userNameEl = document.getElementById('userName');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  // determine a friendly name: displayName > stored currentUser.name > email
+  let name = '';
+  if (user) {
+    name = user.displayName || user.email || '';
+  } else {
+    try {
+      const stored = JSON.parse(localStorage.getItem('currentUser'));
+      if (stored && stored.name) name = stored.name;
+      else if (stored && stored.email) name = stored.email;
+    } catch (e) {}
+  }
+
+  if (userNameEl) {
+    if (name) userNameEl.textContent = 'Welcome, ' + name;
+    else userNameEl.textContent = '';
+  }
+
+  if (logoutBtn) {
+    // show logout only when a user is present
+    logoutBtn.style.display = user || name ? '' : 'none';
+  }
+}
 
 /* ================= MAIN ================= */
 document.addEventListener("DOMContentLoaded", () => {
