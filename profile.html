@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UrbanDiary Profile</title>
-<link rel="stylesheet" href="style/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanDiary Profile</title>
+  <link rel="stylesheet" href="style/styles.css">
 </head>
+
 <body>
 
-<nav>
+  <nav>
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <label for="menu-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </label>
-    
+
     <div class="logo">UrbanDiary</div>
-    
+
     <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="blog.html">Blogs</a>
-        <a href="profile.html">Profile</a>
-        <a href="library.html">Library</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blogs</a>
+      <a href="profile.html">Profile</a>
+      <a href="library.html">Library</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </div>
-    
+
     <div class="user-info">
       <span id="userName" class="user-name"></span>
       <button class="btn-logout" id="logoutBtn">Logout</button>
     </div>
-    
+
     <button class="toggle-btn" onclick="toggleDark()"><img src="assets/dark-mode-6682.svg" alt="Toggle"></button>
-</nav>
+  </nav>
 
-<div class="wrapper">
+  <div class="wrapper">
 
-  <!-- LEFT -->
-  <div>
+    <!-- LEFT -->
+    <div>
 
-    <div class="profile-card">
-      <h2>Write a Blog</h2>
-      <textarea id="blogText" placeholder="Write your blog here..."></textarea>
-      <input type="file" id="blogImage" accept="image/*">
-      <input type="text" id="imageCaption" placeholder="Image caption (optional)">
-      <button class="toggle-btn" style="margin-top:10px;" onclick="postBlog()">Post</button>
+      <div class="profile-card">
+        <h2>Write a Blog</h2>
+        <textarea id="blogText" placeholder="Write your blog here..."></textarea>
+        <input type="file" id="blogImage" accept="image/*">
+        <input type="text" id="imageCaption" placeholder="Image caption (optional)">
+        <button class="toggle-btn" style="margin-top:10px;" onclick="postBlog()">Post</button>
+      </div>
+
+      <div id="blogContainer"></div>
+
     </div>
 
-    <div id="blogContainer"></div>
+    <!-- RIGHT PROFILE -->
+    <div class="sidebar-profile">
+
+      <div class="avatar" id="avatarLetter">D</div>
+      <h3 id="profileName">DemoUser</h3>
+      <div class="username" id="profileUsername">@DemoUser</div>
+      <div class="bio" id="profileBio">Frontend Developer | Blogger</div>
+
+      <div class="social">
+        <a id="instaLink" href="#" target="_blank">Instagram</a>
+      </div>
+
+      <div class="edit" onclick="editProfile()">Edit Profile</div>
+
+    </div>
 
   </div>
 
-  <!-- RIGHT PROFILE -->
-  <div class="sidebar-profile">
-
-    <div class="avatar" id="avatarLetter">D</div>
-    <h3 id="profileName">DemoUser</h3>
-    <div class="username" id="profileUsername">@DemoUser</div>
-    <div class="bio" id="profileBio">Frontend Developer | Blogger</div>
-
-    <div class="social">
-      <a id="instaLink" href="#" target="_blank">Instagram</a>
-    </div>
-
-    <div class="edit" onclick="editProfile()">Edit Profile</div>
-
-  </div>
-
-</div>
-
-<script src="js/auth.js" defer></script>
-<script src="js/profile.js" defer></script>
-<script src="js/app.js" defer></script>
-<script>
-function toggleDark(){
-  document.body.classList.toggle("dark");
-}
-</script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/profile.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
 </body>
+
 </html>
-
-

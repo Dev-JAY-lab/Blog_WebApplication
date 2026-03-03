@@ -55,7 +55,7 @@ const blogs = [
  {
   user:"Kabir Sharma",
   title:"Learning to Love Again After Heartbreak",
-  desc:"Healing takes time, but self-love rebuilds what pain once broke. Read more...",
+  desc:"Healing takes time, but self-love rebuilds what pain once broke. ",
   likes:"98k",
   comments:"2.1k",
   date:"Feb 18 · 4 min read",
