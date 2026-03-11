@@ -18,7 +18,7 @@
   --shadow-dark: rgba(255, 255, 255, 0.1);
 }
 
-/* ================= GLOBAL STYLES ================= */
+/*  GLOBAL STYLES  */
 * {
   margin: 0;
   padding: 0;
@@ -3421,4 +3421,5 @@ nav {
 .blog-detail p {
   line-height: 1.6;
   margin-top: 20px;
+
 }
