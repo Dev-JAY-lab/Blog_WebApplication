@@ -1,8 +1,19 @@
 // ===== USER AUTHENTICATION CHECK =====
 function checkUserSession() {
-  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  let currentUser = JSON.parse(localStorage.getItem('currentUser'));
   
-  // If no user is logged in, redirect to login
+  // If we don't have the key but firebase already knows the user,
+  // sync the two (covers fast reloads or direct navigation after login).
+  if (!currentUser && window.firebaseUser) {
+    currentUser = {
+      uid: window.firebaseUser.uid,
+      email: window.firebaseUser.email || '',
+      name: window.firebaseUser.displayName || ''
+    };
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+  }
+
+  // If still no user, redirect to login
   if (!currentUser) {
     alert('Please login to access this page');
     window.location.href = 'login.html';
@@ -328,6 +339,15 @@ function renderBlogs(blogsToRender) {
 
       <img src="${blog.img}" loading="lazy">
     `;
+    // make the card clickable: store selected blog and navigate to detail
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      try {
+        sessionStorage.setItem('selectedBlog', JSON.stringify(blog));
+      } catch (e) {}
+      window.location.href = 'blog-detail.html';
+    });
+
     fragment.appendChild(card);
   });
   

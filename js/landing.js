@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
   const phrases = document.querySelectorAll('.sliding-phrases .phrase');
   if (phrases && phrases.length){
     const wrap = document.querySelector('.sliding-phrases');
@@ -25,4 +26,3 @@
     })
   }
 });
-
